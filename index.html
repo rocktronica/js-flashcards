@@ -1,0 +1,459 @@
+<meta charset="utf-8" />
+
+<h1>Array Methods</h1>
+
+<section class="cards">
+    <article class="card">
+        <div class="front">
+            <h3>Array.from()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.from(arrayLike[, mapFn, thisArg])</pre>
+            <p>The <code>Array.from()</code> method creates a new <code>Array</code> instance from an array-like or iterable object.</p>
+            <pre class="example">Array.from('foo'); // ["f", "o", "o"]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.isArray()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.isArray(obj)</pre>
+            <p>The <code>Array.isArray()</code> function determines whether the passed value is an Array.</p>
+            <pre class="example">Array.isArray([1]); // true</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.of()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.of(element0[, element1[, ...[, elementN]]])</pre>
+            <p>The <code>Array.of()</code> method creates a new <code>Array</code> instance with a variable number of arguments, regardless of number or type of the arguments.</p>
+            <pre class="example">Array.of(1, 2, 3); // [1, 2, 3]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.concat()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.concat(value1[, value2[, ...[, valueN]]])</pre>
+            <p>The <code>concat()</code> method is used to merge two or more arrays. This method does not change the existing arrays, but instead returns a new array.</p>
+            <pre class="example">['a', 'b', 'c'].concat([1, 2, 3]); // ['a', 'b', 'c', 1, 2, 3]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.copyWithin()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.copyWithin(target[, start, end])</pre>
+            <p>The <code>copyWithin</code>() method shallow copies part of an array to another location in the same array and returns it, without modifying its size.</p>
+            <pre class="example">[1, 2, 3, 4, 5].copyWithin(0, 3, 4); // [4, 2, 3, 4, 5]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.entries()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">a.entries()</pre>
+            <p>The <code>entries()</code> method returns a new <code>Array Iterator</code> object that contains the key/value pairs for each index in the array.</p>
+            <pre class="example">['a', 'b', 'c'].entries().next().value; // [0, 'a']</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.every()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.every(callback[, thisArg])</pre>
+            <p>The <code>every()</code> method tests whether all elements in the array pass the test implemented by the provided function.</p>
+            <pre class="example">[1, 30, 39, 29, 10, 13].every(v => v < 40); // true</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.fill()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.fill(value[, start[, end]])</pre>
+            <p>The <code>fill()</code> method fills all the elements of an array from a start index to an end index with a static value. The end index is not included</p>
+            <pre class="example">[1, 2, 3, 4].fill(0, 2, 4); // [1, 2, 0, 0]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.filter()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.filter(callback[, thisArg])</pre>
+            <p>The <code>filter()</code> method creates a new array with all elements that pass the test implemented by the provided function.</p>
+            <pre class="example">[2, 5, 10, 12].filter(v => v >= 10); // [10, 12]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.find()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.find(callback[, thisArg])</pre>
+            <p>The find() method returns the value of the first element in the array that satisfies the provided testing function. Otherwise undefined is returned.</p>
+            <pre class="example">[2, 5, 10, 12].find(v => v >= 10); // 10</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.findIndex()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.findIndex(callback[, thisArg])</pre>
+            <p>The <code>findIndex()</code> method returns the index of the first element in the array that satisfies the provided testing function. Otherwise -1 is returned.</p>
+            <pre class="example">[2, 5, 10, 12].findIndex(v => v >= 10); // 2</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.forEach()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.forEach((currentValue[, index[, array]]) => {}[, thisArg]);</pre>
+            <p>The <code>forEach()</code> method executes a provided function once for each array element.</p>
+            <pre class="example">[1, 2, 3].forEach(v => { console.log(v * 2); }); // 2, 4, 6</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.includes()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.includes(searchElement[, fromIndex])</pre>
+            <p>The <code>includes()</code> method determines whether an array includes a certain element, returning <code>true</code> or <code>false</code> as appropriate.</p>
+            <pre class="example">[1, 2, 3].includes(2); // true</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.indexOf()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.indexOf(searchElement[, fromIndex])</pre>
+            <p>The <code>indexOf()</code> method returns the first index at which a given element can be found in the array, or -1 if it is not present.</p>
+            <pre class="example">['ant', 'bison', 'camel', 'duck', 'bison'].indexOf('bison'); // 1</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.join()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.join([separator = ','])</pre>
+            <p>The <code>join()</code> method joins all elements of an array (or an array-like object) into a string and returns this string.</p>
+            <pre class="example">['Fire', 'Wind', 'Rain'].join('-'); // Fire-Wind-Rain</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.keys()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.keys()</pre>
+            <p>The <code>keys()</code> method returns a new <code>Array Iterator</code> object that contains the keys for each index in the array.</p>
+            <pre class="example">for (let key of ['a', 'b', 'c'].keys()) { console.log(key); } // 0, 1, 2</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.lastIndexOf()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.lastIndexOf(searchElement[, fromIndex])</pre>
+            <p>The <code>lastIndexOf()</code> method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at <code>fromIndex</code>.</p>
+            <pre class="example">['Dodo', 'Tiger', 'Penguin', 'Dodo'].lastIndexOf('Dodo'); // 3</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.map()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.map((currentValue[, index[, array]]) => { }[, thisArg])</pre>
+            <p>The <code>map()</code> method creates a new array with the results of calling a provided function on every element in the calling array.</p>
+            <pre class="example">[1, 4, 9, 16].map(x => x * 2); // [2, 8, 18, 32]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.pop()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.pop()</pre>
+            <p>The <code>pop()</code> method removes the last element from an array and returns that element. This method changes the length of the array.</p>
+            <pre class="example">['a', 'b', 'c'].pop(); // 'c'</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.push()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.push(element1[, ...[, elementN]])</pre>
+            <p>The <code>push()</code> method adds one or more elements to the end of an array and returns the new length of the array.</p>
+            <pre class="example">a = ['a', 'b', 'c']; a.push('d'); // 4 (['a', 'b', 'c', 'd'])</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.reduce()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.reduce(callback[, initialValue])</pre>
+            <p>The <code>reduce()</code> method applies a function against an accumulator and each element in the array (from left to right) to reduce it to a single value.</p>
+            <pre class="example">['x', 'y', 'z'].reduce((v1, v2) => v1 + v2, 'abc'); // 'abcxyz'</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.reduceRight()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.reduceRight(callback[, initialValue])</pre>
+            <p>The <code>reduceRight()</code> method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value.</p>
+            <pre class="example">['c', 'b', 'a'].reduceRight((v1, v2) => v1 + v2, 'xyz'); // 'xyzabc'</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.reverse()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.reverse()</pre>
+            <p>The <code>reverse()</code> method reverses an array in place. The first array element becomes the last, and the last array element becomes the first.</p>
+            <pre class="example">[1, 2, 3].reverse(); // [3, 2, 1]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.shift()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.shift()</pre>
+            <p>The <code>shift()</code> method removes the first element from an array and returns that removed element. This method changes the length of the array.</p>
+            <pre class="example">a = [1, 2, 3]; a.shift(); // 1 ([2, 3])</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.slice()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.slice([begin[, end]])</pre>
+            <p>The <code>slice()</code> method returns a shallow copy of a portion of an array into a new array object selected from <code>begin</code> to <code>end</code> (<code>end</code> not included). The original array will not be modified.</p>
+            <pre class="example">['a', 'b', 'c', 'd'].slice(2, 3); // ['c']</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.some()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.some(callback[, thisArg])</pre>
+            <p>The <code>some()</code> method tests whether at least one element in the array passes the test implemented by the provided function.</p>
+            <pre class="example">[2, 5, 10, 12].some(v => v/2 === 4); // false</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.sort()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.sort([compareFunction])</pre>
+            <p>The <code>sort()</code> method sorts the elements of an array in place and returns the array. The sort is not necessarily stable. The default sort order is according to string Unicode code points.</p>
+            <pre class="example">[1, 30, 4, 21].sort(); // [1, 21, 30, 4]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.splice()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.splice(start[, deleteCount[, item1[, item2[, ...]]]])</pre>
+            <p>The <code>splice()</code> method changes the contents of an array by removing existing elements and/or adding new elements. Returns deletion(s).</p>
+            <pre class="example">a = [1, 2, 3, 4]; a.splice(2, 2, 'a') // [3, 4] ([1, 2, 'a'])</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.toString()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.toString()</pre>
+            <p>The <code>toString()</code> method returns a string representing the specified array and its elements.</p>
+            <pre class="example">[1, 2, 'a', '1a'].toString(); '1,2,a,1a'</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.unshift()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.unshift(element1[, ...[, elementN]])</pre>
+            <p>The <code>unshift()</code> method adds one or more elements to the beginning of an array and returns the new length of the array.</p>
+            <pre class="example">a = [1, 2, 3]; a.unshift(4, 5); // 5 ([4, 5, 1, 2, 3])</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Array.prototype.values()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">arr.values()</pre>
+            <p>The <code>values()</code> method returns a new <code>Array Iterator</code> object that contains the values for each index in the array.</p>
+            <pre class="example">for (let val of ['a', 'b', 'c'].values()) { console.log(val); }; // a, b, c</pre>
+        </div>
+    </article>
+</section>
+
+<style>
+@media print{
+    @page {size: landscape}
+
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    h1, h2 {
+        display: none;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+body {
+    font-family: Open Sans, sans-serif;
+}
+
+h1, h2 {
+    margin: 0 0 1rem;
+    text-align: center;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+
+.front, .back {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    page-break-after: always;
+    height: 100%;
+    width: 100%;
+    padding: .5in;
+    background: #fff;
+}
+
+.syntax, .example {
+    padding: .5rem;
+    white-space: pre-wrap;
+}
+
+.syntax {
+    background: #f3f3f3;
+    padding-left: 1rem;
+    border-left: .5rem solid #b3b3b3;
+}
+
+.example {
+    background: #f3f3f3;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.example:before {
+    content: "\25B6";
+    color: #aaa;
+    font-weight: bold;
+    position: absolute;
+    left: .5rem;
+    top: .5rem;
+}
+
+.back > * {
+    width: 100%;
+}
+
+.back > *:not(:last-child) {
+    margin: 0 0 1.5rem;
+}
+
+@media screen {
+    body {
+        max-width: 5in;
+        margin: 10px auto;
+        background: #f0f0f0;
+    }
+
+    .card {
+        clear: both;
+        margin: 0 0 20px;
+    }
+
+    .front, .back {
+        width: 5in;
+        height: 3in;
+        outline: 1px solid #ccc;
+        margin: 0 0 10px;
+    }
+}
+
+@media screen and (min-width: 1020px) { /* ~calc(10in + 40px) */
+    body {
+        max-width: calc(10in + 10px)
+    }
+
+    .front {
+        float: left;
+        margin-right: 10px;
+    }
+}
+</style>
