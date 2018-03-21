@@ -1,6 +1,8 @@
 <meta charset="utf-8" />
 
-<h1>Array Methods</h1>
+<h1>JavaScript Native Method Flashcards</h1>
+
+<h2>Array Methods</h2>
 
 <section class="cards">
     <article class="card">
@@ -345,6 +347,262 @@
     </article>
 </section>
 
+<h2>Object Methods</h2>
+
+<section class="cards">
+    <article class="card">
+        <div class="front">
+            <h3>Object.assign()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.assign(target, ...sources)</pre>
+            <p>The <code>Object.assign()</code> method is used to copy the values of all enumerable own properties from one or more source objects to a target object. It will return the target object.</p>
+            <pre class="example">Object.assign({}, {a: 0, b: 2, c: 2}, {b: 1, d: 3}); // { "a": 0, "b": 1, "c": 2, "d": 3}</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.create()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.create(proto[, propertiesObject])</pre>
+            <p>The <code>Object.create()</code> method creates a new object, using an existing object to provide the newly created object's __proto__ . Used to implement classical inheritance.</p>
+            <pre class="example">Object.create(Object.prototype); // {}</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.defineProperties()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.defineProperties(obj, props)</pre>
+            <p>The <code>Object.defineProperties()</code> method defines new or modifies existing properties directly on an object, returning the object.</p>
+            <pre class="example">Object.defineProperties({}, {a: { value: 0}}) // {a: 0}</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.getOwnPropertyDescriptor()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.getOwnPropertyDescriptor(obj, prop)</pre>
+            <p>The <code>Object.getOwnPropertyDescriptor()</code> method returns a property descriptor for an own property (that is, one directly present on an object and not in the object's prototype chain) of a given object.</p>
+            <pre class="example">Object.getOwnPropertyDescriptor({a: 0}, "a").value; // 0</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.getOwnPropertyDescriptors()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.getOwnPropertyDescriptors(obj)</pre>
+            <p>The <code>Object.getOwnPropertyDescriptors()</code> method returns all own property descriptors of a given object.</p>
+            <pre class="example">Object.getOwnPropertyDescriptors({a: 0}, "a"); // {a: {value: 0, writable: true, enumerable: true, configurable: true}}</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.getOwnPropertyNames()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.getOwnPropertyNames(obj)</pre>
+            <p>The <code>Object.getOwnPropertyNames()</code> method returns an array of all properties (including non-enumerable properties except for those which use Symbol) found directly upon a given object.</p>
+            <pre class="example">Object.getOwnPropertyNames({a: 0, b: 1, c: 2}); // ["a", "b", "c"]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.getOwnPropertySymbols()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.getOwnPropertySymbols(obj)</pre>
+            <p>The <code>Object.getOwnPropertySymbols()</code> method returns an array of all symbol properties found directly upon a given object.</p>
+            <pre class="example">Object.getOwnPropertySymbols({}); // []</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.getPrototypeOf()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.getPrototypeOf(obj)</pre>
+            <p>The <code>Object.getPrototypeOf()</code> method returns the prototype (i.e. the value of the internal <code>[[Prototype]]</code> property) of the specified object.</p>
+            <pre class="example">proto = {}; obj = Object.create(proto); Object.getPrototypeOf(obj) === proto; // true</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.is()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.is(value1, value2)</pre>
+            <p>The <code>Object.is()</code> method determines whether two values are the same value.</p>
+            <pre class="example">Object.is("a", "a"); // true</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.isExtensible()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">The <code>Object.isExtensible()</code> method determines if an object is extensible (whether</pre>
+            <p> it can have new properties added to it).</p>
+            <pre class="example">obj = Object.preventExtensions({}); obj.test = true; obj.test; // undefined</pre>
+        </div>
+    </article>
+    <article class="card">
+        <div class="front">
+            <h3>Object.isFrozen()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.isFrozen(obj)</pre>
+            <p>The <code>Object.isFrozen()</code> determines if an object is frozen.</p>
+            <pre class="example">Object.isFrozen({a: 0}); // false</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.isSealed()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.isSealed(obj)</pre>
+            <p>The <code>Object.isSealed()</code> method determines if an object is sealed.</p>
+            <pre class="example">Object.isSealed({a: 0}); // false</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.keys()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.keys(obj)</pre>
+            <p>The <code>Object.keys()</code> method returns an array of a given object's own enumerable properties, in the same order as that provided by a <code>for...in</code> loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).</p>
+            <pre class="example">Object.keys({a: 0, b: 1, c: 2}); // ["a", "b", "c"]</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.preventExtensions()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.preventExtensions(obj)</pre>
+            <p>The <code>Object.preventExtensions()</code> method prevents new properties from ever being added to an object (i.e. prevents future extensions to the object).</p>
+            <pre class="example">obj = Object.preventExtensions({}); Object.defineProperty(obj, "key", {value: true}); // TypeError</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.prototype.hasOwnProperty()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">obj.hasOwnProperty(prop)</pre>
+            <p>The <code>hasOwnProperty()</code> method returns a boolean indicating whether the object has the specified property as own (not inherited) property.</p>
+            <pre class="example">var obj = {a: 0}; obj.hasOwnProperty("a"); obj.hasOwnProperty("toString"); // true, false</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.prototype.isPrototypeOf()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">prototypeObj.isPrototypeOf(object)</pre>
+            <p>The <code>isPrototypeOf()</code> method checks if an object exists in another object's prototype chain.</p>
+            <pre class="example">Object.prototype.isPrototypeOf(Array) // true</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.prototype.propertyIsEnumerable()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">obj.propertyIsEnumerable(prop)</pre>
+            <p>The <code>propertyIsEnumerable()</code> method returns a Boolean indicating whether the specified property is enumerable.</p>
+            <pre class="example">([1,2,3]).propertyIsEnumerable("length")</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.prototype.toLocaleString()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">obj.toLocaleString()</pre>
+            <p>The <code>toLocaleString()</code> method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes.</p>
+            <pre class="example">(1234.5678).toLocaleString("de-DE"); // "1.234,568"</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.prototype.toString()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">obj.toString()</pre>
+            <p>The <code>toString()</code> method returns a string representing the object.</p>
+            <pre class="example">[1,2,3].toString(); // "1,2,3"</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.prototype.valueOf()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">object.valueOf()</pre>
+            <p>The <code>valueOf()</code> method returns the primitive value of the specified object.</p>
+            <pre class="example">(new Date()).valueOf(); // date coerced into timestamp</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.seal()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.seal(obj)</pre>
+            <p>The <code>Object.seal()</code> method seals an object, preventing new properties from being added to it and marking all existing properties as non-configurable. Values of present properties can still be changed as long as they are writable.</p>
+            <pre class="example">obj = Object.seal({a: 1}); obj.b = 2; obj; // {a: 1}</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.setPrototypeOf()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.setPrototypeOf(obj, prototype);</pre>
+            <p>The <code>Object.setPrototypeOf()</code> method sets the prototype (i.e., the internal <code>[[Prototype]]</code> property) of a specified object to another object or <code>null</code>.</p>
+            <pre class="example">dict = Object.setPrototypeOf({}, null); dict.a = 0; // {a: 1}</pre>
+        </div>
+    </article>
+
+    <article class="card">
+        <div class="front">
+            <h3>Object.values()</h3>
+        </div>
+        <div class="back">
+            <pre class="syntax">Object.values(obj)</pre>
+            <p>The <code>Object.values()</code> method returns an array of a given object's own enumerable property values, in the same order as that provided by a <code>for...in</code> loop (the difference being that a for-in loop enumerates properties in the prototype chain as well).</p>
+            <pre class="example">Object.values({a: 0, b: 1, c: 2}); // [0, 1, 2]</pre>
+        </div>
+    </article>
+</section>
+
 <style>
 @media print{
     @page {size: landscape}
@@ -431,6 +689,10 @@ h3 { font-size: 1.5rem; }
         max-width: 5in;
         margin: 10px auto;
         background: #f0f0f0;
+    }
+
+    h1, .cards {
+        margin: 0 0 40px;
     }
 
     .card {
